@@ -3,10 +3,11 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand|Spectral');
 
 html {
-    background-color:#A0C3D2;
+    background-color: lightgray;
     font-family: 'Quicksand', sans-serif;
     font-size: 0.95em;
     line-height: 1.5em;
+    background-image: url("../images/background.jpg");
     background-repeat: repeat;
     background-size: 2000px 1200px;
 }
@@ -42,7 +43,7 @@ h1.page-header{
  
 
  main.wrapper {
-    background-color:#F7F5EB;
+    background-color: white;
     overflow: auto;
     -moz-border-radius-bottomleft: 5px;
     -moz-border-radius-bottomright: 5px;
@@ -62,13 +63,13 @@ h2,h3 {
 }
 
 a {
-    color:#EAE0DA;
+    color:darkcyan;
     text-decoration: none;
 }
 
 a:hover {
     color: whitesmoke;
-    background-color:#EAE0DA;
+    background-color: darkcyan;
     text-decoration: none;
 }
 
