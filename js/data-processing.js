@@ -1,8 +1,15 @@
 //alert("hello from data processing!");
 
+function titleCase(str) {
+  str = str.toLowerCase().split(" ");
+  for(var i = 0; i < str.length; i++){
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+  }
+  return str.join(" ");
+}
+
+
 const queryString = window.location.search;
-
-
 
 
 if(queryString.length > 0){
@@ -14,45 +21,44 @@ if(queryString.length > 0){
     let myTotal = 0;//will store total cost
     myCart += "<h3>Cart Content</h3>";
 
- /*
-        Cart Contents
-        Widget: $3.99
-        Sprocket: $5.99
-        Thingy: $1.99
-        Total: $11.97
-*/   
+    /*
+    Cart Contents
+    Widget: $3.99
+    procket: $5.99
+    Thingy: $1.99
+    Total: $11.97
+    */   
 
 // Log the values
-urlParams.forEach(function(value, key) {
+  urlParams.forEach(function(value, key) {
 
     if(key == "Cart"){//process cart
-        //alert("Cart Item: " + value);
+    //alert("Cart Item: " + value);
 
-        switch(value){
-            case "Widget":
-                myCart += "Widget: $3.99<br>";
-                myTotal += 3.99;
-            break;
+      switch(value){
+        case "Widget":
+          myCart += "Widget: $3.99<br>";
+          myTotal += 3.99;
+          break;
 
-            case "Sprocket":
-                myCart += "Sprocket: $5.99<br>";
-                myTotal += 5.99;
-            break;
+        case "Sprocket":
+          myCart += "Sprocket: $5.99<br>";
+          myTotal += 5.99;
+          break;
 
-            case "Thingy":
-                myCart += "Thingy: $1.99<br>";
-                myTotal += 1.99;
-            break;
+        case "Thingy":
+          myCart += "Thingy: $1.99<br>";
+          myTotal += 1.99;
+          break;
         }
-
-     
-
     }else{//process shipping
 
         key = key.split("_").join(" ");
-    //console.log(key, value);
-    myData += `<p>${key}: ${value}</p>`;
+        if(key == "First Name"|| key == "Last Name"){
+            value = titleCase(value);
+        } 
 
+        myData += `<p>${key}: ${value}</p>`;
     }
 });
 

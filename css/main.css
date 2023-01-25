@@ -15,6 +15,9 @@ html {
 body{
     margin:0; /* removes gap at top of page */
 }
+article{
+    margin:20px;
+}
 
 ::selection {
     color: #000; 
